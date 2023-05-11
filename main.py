@@ -211,27 +211,26 @@ window = pygame.display.set_mode((window_width, window_height))
 elevation = window_height * 0.8
 game_images = {}
 framepersecond = 32
-pipeimage = 'images/pipe.png'
-background_image = 'images/background.jpg'
-birdplayer_image = 'images/bird.png'
-sealevel_image = 'images/base.jfif'
-hourglass_image = 'assets/hourglass.png'
+pipeimage = 'assets/images/pipe.png'
+background_image = 'assets/images/background.jpg'
+birdplayer_image = 'assets/images/bird.png'
+sealevel_image = 'assets/images/base.jfif'
 framepersecond_clock = pygame.time.Clock()
 
 pygame.display.set_caption("Menu")
 
 # Load images which will be used in the game
 game_images['scoreimages'] = (
-    pygame.image.load('images/0.png').convert_alpha(),
-    pygame.image.load('images/1.png').convert_alpha(),
-    pygame.image.load('images/2.png').convert_alpha(),
-    pygame.image.load('images/3.png').convert_alpha(),
-    pygame.image.load('images/4.png').convert_alpha(),
-    pygame.image.load('images/5.png').convert_alpha(),
-    pygame.image.load('images/6.png').convert_alpha(),
-    pygame.image.load('images/7.png').convert_alpha(),
-    pygame.image.load('images/8.png').convert_alpha(),
-    pygame.image.load('images/9.png').convert_alpha()
+    pygame.image.load('assets/images/0.png').convert_alpha(),
+    pygame.image.load('assets/images/1.png').convert_alpha(),
+    pygame.image.load('assets/images/2.png').convert_alpha(),
+    pygame.image.load('assets/images/3.png').convert_alpha(),
+    pygame.image.load('assets/images/4.png').convert_alpha(),
+    pygame.image.load('assets/images/5.png').convert_alpha(),
+    pygame.image.load('assets/images/6.png').convert_alpha(),
+    pygame.image.load('assets/images/7.png').convert_alpha(),
+    pygame.image.load('assets/images/8.png').convert_alpha(),
+    pygame.image.load('assets/images/9.png').convert_alpha()
 )
 game_images['flappybird'] = pygame.image.load(
     birdplayer_image).convert_alpha()
@@ -246,7 +245,7 @@ game_images['pipeimage'] = (pygame.transform.rotate(pygame.image.load(
 
 # Returns Press-Start-2P in the desired size
 def get_font(size):
-    return pygame.font.Font("assets/Space.ttf", size)
+    return pygame.font.Font("assets/fonts/Space.ttf", size)
 
 
 def gameOverScreen(score):
@@ -270,7 +269,7 @@ def gameOverScreen(score):
 
         # Create a button to return to main menu
         gameOverScreen_BACK = Button(image=pygame.image.load(
-            "assets/Play Rect.png"), pos=(300, 300),
+            "assets/images/Play Rect.png"), pos=(300, 300),
                             text_input="MAIN MENU",
                             font=get_font(30),
                             base_color="White",
@@ -330,12 +329,14 @@ def main_menu():
 
         # Create the button for the diffrent screen including:
         # leaderboard, and quit option
-        PLAY_BUTTON = Button(image=pygame.image.load("assets/Play Rect.png"),
+        PLAY_BUTTON = Button(image=pygame.image.load(
+            "assets/images/Play Rect.png"),
                              pos=(300, 200),
                              text_input="PLAY", font=get_font(50),
                              base_color="#d7fcd4",
                              hovering_color="Green")
-        QUIT_BUTTON = Button(image=pygame.image.load("assets/Quit Rect.png"),
+        QUIT_BUTTON = Button(image=pygame.image.load(
+            "assets/images/Quit Rect.png"),
                              pos=(300, 350),
                              text_input="QUIT",
                              font=get_font(50),
