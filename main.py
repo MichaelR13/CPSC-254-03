@@ -4,7 +4,8 @@ import os
 import sys
 from pygame.locals import *
 from button import Button
-
+from sound import jump_sound
+from sound import game_over_sound
 pygame.init()
 
 
@@ -59,6 +60,7 @@ def flappygame():
                 if vertical > 0:
                     bird_velocity_y = bird_flap_velocity
                     bird_flapped = True
+                    jump_sound()
 
         # This function will return true
         # if the flappybird is crashed
@@ -249,6 +251,7 @@ def get_font(size):
 
 
 def gameOverScreen(score):
+    game_over_sound()
     while True:
         # set the basic backsreen and pointer
         window.fill("Black")
