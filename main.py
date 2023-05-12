@@ -217,7 +217,7 @@ birdplayer_image = 'assets/images/bird.png'
 sealevel_image = 'assets/images/base.jfif'
 framepersecond_clock = pygame.time.Clock()
 
-pygame.display.set_caption("Menu")
+pygame.display.set_caption("SHIBA INU")
 
 # Load images which will be used in the game
 game_images['scoreimages'] = (
